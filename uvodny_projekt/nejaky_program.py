@@ -2,10 +2,8 @@
 zoradovanie pomocou rekurzie, skusim si debugnut
 '''
 
-import random
-
-
 def merge(lst0, lst1):
+    '''spojenie dvoch listov'''
     ret = []
     while lst0 and lst1:
         if lst0[0] <= lst1[0]:
@@ -18,12 +16,11 @@ def merge(lst0, lst1):
 
 
 def mergesort(lst):
-    '''tu je docstring baby'''
+    '''samotne rozdelovanie'''
 
     if len(lst) <= 1:
         return lst
-    # random to avoid dead loop for special sequence
-    r = lst[random.randint(0, len(lst) - 1)]
+    r = lst[len(lst) // 2]
     left, mid, right = [], [], []
     for i in lst:
         if i < r:
